@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leafmap"
+version = "0.63.1"
+dynamic = [
+    "dependencies",
+]
+description = "A Python package for geospatial analysis and interactive mapping in a Jupyter environment."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT license"}
+keywords = ["leafmap"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+authors = [{name = "Qiusheng Wu", email = "giswqs@gmail.com"}]
+
+[project.optional-dependencies]
+backends = ["bokeh", "keplergl", "maplibre", "pydeck", "plotly"]
+lidar = ["geopandas","ipygany", "ipyvtklink", "laspy", "panel", "pyntcloud[LAS]", "pyvista[all]"]
+raster = ["localtileserver>=0.10.6", "jupyter-server-proxy", "rio-cogeo", "rioxarray", "netcdf4", "d2spy", "h5netcdf", "h5py", "opera-utils", "psutil", "titiler", "uvicorn"]
+viewer = ["localtileserver", "fiona"]
+usgs = ["pynhd", "py3dep"]
+sql = ["psycopg2", "sqlalchemy"]
+apps = ["streamlit-folium", "voila", "solara"]
+vector = ["geopandas", "osmnx", "pmtiles", "flask", "flask-cors", "lonboard", "mapclassify", "fiona"]
+pmtiles = ["pmtiles", "flask", "flask-cors"]
+ai = ["geopandas", "osmnx", "localtileserver>=0.10.4", "rastervision", "pytorch-lightning", "torchgeo"]
+maplibre = ["anywidget", "geopandas", "fiona", "h3", "ipyvue>=1.12.0", "ipyvuetify", "localtileserver", "mapclassify", "maplibre>=0.3.1", "pmtiles", "rioxarray", "xarray"]
+gdal = ["gdal", "pyproj"]
+duckdb = ["duckdb", "duckdb-engine", "jupysql", "flask", "flask-cors", "jupyter-server-proxy"]
+titiler = ["titiler", "uvicorn"]
+polars = ["polars", "geopandas", "shapely"]
+
+
+[project.scripts]
+leafmap = "leafmap.cli:main"
+view-raster = "leafmap.cli:view_raster_cli"
+view-vector = "leafmap.cli:view_vector_cli"
+
+[tool]
+[tool.setuptools.packages.find]
+include = ["leafmap*"]
+exclude = ["docs*"]
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[tool.bumpversion]
+current_version = "0.63.1"
+commit = true
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
+
+[[tool.bumpversion.files]]
+filename = "leafmap/__init__.py"
+search = '__version__ = "{current_version}"'
+replace = '__version__ = "{new_version}"'
+
+[tool.flake8]
+exclude = [
+    "docs",
+]
+max-line-length = 88
+
+[tool.setuptools_scm]
+
+[tool.uv]
+find-links = ["https://girder.github.io/large_image_wheels"]
+
+[project.urls]
+Homepage = "https://github.com/opengeos/leafmap"

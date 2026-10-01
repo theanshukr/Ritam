@@ -1,0 +1,40 @@
+bokeh
+boto3
+cogeo-mosaic
+d2spy
+earthaccess
+ffmpeg-python
+fiona; python_version < "3.14"
+geopandas>=1.0.0
+gradio
+h3
+h5netcdf
+h5py
+# ipysheet
+# jupyter_bokeh
+# keplergl
+laspy
+localtileserver>=0.10.6
+lonboard
+mapclassify>=2.4.0
+mss
+netcdf4
+obstore
+opera-utils
+osmnx
+overturemaps
+owslib
+palettable
+pmtiles
+psutil
+# psycopg2
+pycrs
+pydeck
+pyntcloud[LAS]
+pyvista-xarray
+rasterio
+rasterstats
+rio-cogeo
+rioxarray
+# sqlalchemy
+# streamlit-folium

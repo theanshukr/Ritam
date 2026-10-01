@@ -15,8 +15,6 @@ __pycache__/
 data/*.tif
 data/chips/
 
-# Cloned Submodule Repo
-satellite/
 
 # IDE & OS
 .vscode/
