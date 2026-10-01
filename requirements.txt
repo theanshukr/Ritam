@@ -1,0 +1,14 @@
+leafmap>=0.63.0
+rasterio>=1.4.0
+geopandas>=1.0.0
+shapely>=2.0.0
+pystac-client>=0.9.0
+pyproj>=3.7.0
+xarray>=2025.0.0
+rioxarray>=0.19.0
+localtileserver>=1.0.0
+requests>=2.32.0
+pillow>=10.0.0
+psutil>=7.0.0
+fastapi>=0.115.0
+uvicorn>=0.30.0
