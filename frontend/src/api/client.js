@@ -2,10 +2,6 @@
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
-/** Sentinel tile URL template for Leaflet tile layers. */
-export function getSentinelTileUrl(projectId, maxCloudCover = 30, size = 256) {
-  return `${API_BASE_URL}/satellite/${projectId}/tile/{z}/{x}/{y}?max_cloud_cover=${maxCloudCover}&size=${size}`;
-}
 
 // Get auth token from localStorage (set during login)
 function getAuthToken() {
@@ -216,8 +212,6 @@ export const apiClient = {
       width,
       height,
     });
-    
-    const token = getAuthToken();
     const url = `${API_BASE_URL}/satellite/${projectId}/ndvi-overlay?${params}`;
     
     const response = await fetch(url, {
@@ -287,20 +281,31 @@ export const apiClient = {
     return { blobUrl, blob };
   },
 
-  /**
-   * Get the bounding box of a project boundary for overlay placement.
-   * Returns [southWest, northEast] in Leaflet format: [[lat, lng], [lat, lng]]
-   */
   getProjectBounds(project) {
-    if (!project?.boundary || !Array.isArray(project.boundary) || project.boundary.length < 3) {
-      return null;
-    }
+    if (!project?.boundary) return null;
     
-    // boundary is an array of [lat, lng] coordinates
+    let coords = [];
+    if (project.boundary.type === 'MultiPolygon' || project.boundary.type === 'Polygon') {
+      // Extract from GeoJSON
+      const extractCoords = (arr) => {
+        if (arr.length > 0 && typeof arr[0] === 'number') {
+          // [lng, lat]
+          coords.push([arr[1], arr[0]]); // Leaflet wants [lat, lng]
+        } else if (Array.isArray(arr)) {
+          arr.forEach(extractCoords);
+        }
+      };
+      extractCoords(project.boundary.coordinates);
+    } else if (Array.isArray(project.boundary)) {
+      coords = project.boundary;
+    }
+
+    if (coords.length < 3) return null;
+    
     let minLat = Infinity, maxLat = -Infinity;
     let minLng = Infinity, maxLng = -Infinity;
     
-    for (const coord of project.boundary) {
+    for (const coord of coords) {
       const lat = coord[0];
       const lng = coord[1];
       if (lat < minLat) minLat = lat;
@@ -309,13 +314,12 @@ export const apiClient = {
       if (lng > maxLng) maxLng = lng;
     }
     
-    // Add a small padding (10% of the bounding box size)
     const latPad = (maxLat - minLat) * 0.1;
     const lngPad = (maxLng - minLng) * 0.1;
     
     return [
-      [minLat - latPad, minLng - lngPad],  // South-West corner
-      [maxLat + latPad, maxLng + lngPad]   // North-East corner
+      [minLat - latPad, minLng - lngPad],
+      [maxLat + latPad, maxLng + lngPad]
     ];
   }
 };

@@ -1,66 +1,81 @@
 @charset "UTF-8";
 
 :root {
-  /* Apple VisionOS Spatial Color Palette */
-  --bg-space: #03070d;
-  --bg-deep: #060a12;
-  
-  /* VisionOS Frosted Glass Materials */
-  --glass-bg: rgba(14, 22, 38, 0.48);
-  --glass-bg-elevated: rgba(20, 31, 52, 0.65);
-  --glass-bg-hover: rgba(30, 45, 72, 0.75);
-  --glass-bg-active: rgba(45, 65, 100, 0.85);
-  --glass-bg-capsule: rgba(10, 16, 28, 0.62);
+  /* Natural Light Environmental Workspace Canvas */
+  --bg-canvas: #f6f8f6;
+  --bg-canvas-subtle: #edf3ee;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-subtle: #f3f7f4;
+  --bg-sage-pale: #eaf4ed;
+  --bg-sage-light: #d8ecdf;
 
-  /* Specular Highlight Borders */
-  --glass-border: rgba(255, 255, 255, 0.14);
-  --glass-border-subtle: rgba(255, 255, 255, 0.08);
-  --glass-border-highlight: rgba(255, 255, 255, 0.28);
-  --glass-border-accent: rgba(56, 189, 248, 0.45);
-  --glass-border-emerald: rgba(52, 211, 153, 0.45);
-  --glass-border-rose: rgba(244, 63, 94, 0.45);
-  --glass-border-amber: rgba(251, 191, 36, 0.45);
+  /* Dark Botanical Hero / Overlay Constants (Used selectively for hero / imagery) */
+  --bg-dark: #07100b;
+  --bg-dark-surface: #0f1c13;
+  --bg-dark-muted: #15271b;
+  --bg-dark-border: rgba(255, 255, 255, 0.14);
+  --bg-dark-border-subtle: rgba(255, 255, 255, 0.08);
 
-  /* VisionOS Spatial Depth Shadows */
-  --spatial-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
-  --spatial-shadow-elevated: 0 24px 60px -12px rgba(0, 0, 0, 0.8), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.28);
-  --spatial-shadow-capsule: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  /* Subtle Natural Borders & Dividers */
+  --border-light: #e0e8e2;
+  --border-subtle: #edf2ee;
+  --border-strong: #c2d4c7;
+  --border-focus: #2d6a4f;
 
-  /* Typography */
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.78);
-  --text-muted: rgba(255, 255, 255, 0.48);
-  --text-dim: rgba(255, 255, 255, 0.3);
+  /* High-Contrast Friendly Human Typography */
+  --text-primary: #142018;
+  --text-secondary: #425649;
+  --text-muted: #6b8273;
+  --text-dim: #98ad9f;
 
-  /* Functional Luminous Accents */
-  --color-emerald: #10b981;
-  --color-emerald-glow: #34d399;
-  --color-emerald-bg: rgba(16, 185, 129, 0.16);
-  
-  --color-cyan: #38bdf8;
-  --color-cyan-glow: #7dd3fc;
-  --color-cyan-bg: rgba(56, 189, 248, 0.16);
+  --text-on-dark: #ffffff;
+  --text-on-dark-secondary: #e2ede5;
+  --text-on-dark-muted: #a3b8aa;
 
-  --color-amber: #f59e0b;
-  --color-amber-bg: rgba(245, 158, 11, 0.16);
+  /* Fresh, Natural Botanical Accent Colors (Lively, Organic, Professional) */
+  --color-forest: #1b4332;
+  --color-forest-hover: #235741;
+  --color-forest-bright: #2d6a4f;
+  --color-forest-light: #40916c;
+  --color-moss: #386641;
+  --color-moss-vibrant: #2d6a4f;
+  --color-sage: #52b788;
+  --color-sage-light: #74c69d;
+  --color-sage-pale: #d8f3dc;
+  --color-sage-bg: #eaf5ee;
+  --color-sage-border: rgba(45, 106, 79, 0.18);
+  --color-mint-bright: #2d6a4f;
+  --color-mint-light: #40916c;
+  --color-pine-light: rgba(45, 106, 79, 0.08);
 
-  --color-rose: #f43f5e;
-  --color-rose-bg: rgba(244, 63, 94, 0.16);
+  --color-earth: #8f7961;
+  --color-rust: #c2532f;
+  --color-alert: #bc4749;
+  --color-alert-bg: #fde8e8;
+  --color-warning: #b07d1a;
+  --color-warning-bg: #fef5e7;
+  --color-gain: #2d6a4f;
+  --color-gain-bg: #d8f3dc;
 
-  /* Font Families */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'SF Pro Display', 'Inter', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+  /* Modern, Friendly Human Typography */
+  --font-display: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  /* Continuous Apple Radii */
-  --radius-capsule: 9999px;
-  --radius-window: 24px;
-  --radius-card: 16px;
-  --radius-control: 12px;
-  --radius-sm: 8px;
+  /* Structural Geometry */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
 
-  /* VisionOS Blur Engine */
-  --spatial-blur: blur(36px) saturate(190%);
+  /* Natural Soft Shadows */
+  --shadow-subtle: 0 1px 3px rgba(20, 35, 25, 0.05), 0 1px 2px rgba(20, 35, 25, 0.03);
+  --shadow-card: 0 2px 8px -2px rgba(27, 67, 50, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-overlay: 0 12px 32px -8px rgba(20, 45, 32, 0.14);
 }
 
 * {
@@ -69,110 +84,74 @@
   padding: 0;
 }
 
+::selection {
+  background-color: var(--color-sage-pale);
+  color: var(--color-forest);
+}
+
+::-moz-selection {
+  background-color: var(--color-sage-pale);
+  color: var(--color-forest);
+}
+
 html, body, #root {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  background-color: var(--bg-space);
+  background-color: var(--bg-canvas);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 13.5px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* VisionOS Glass Panel Class */
-.spatial-glass {
-  background: var(--glass-bg);
-  backdrop-filter: var(--spatial-blur);
-  -webkit-backdrop-filter: var(--spatial-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-card);
-  box-shadow: var(--spatial-shadow);
-  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+/* Headings with Friendly, Modern, Natural Character */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
-.spatial-glass-elevated {
-  background: var(--glass-bg-elevated);
-  backdrop-filter: var(--spatial-blur);
-  -webkit-backdrop-filter: var(--spatial-blur);
-  border: 1px solid var(--glass-border-highlight);
-  border-radius: var(--radius-window);
-  box-shadow: var(--spatial-shadow-elevated);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+/* Vibrant Micro Uppercase Labels */
+.editorial-kicker {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-moss);
 }
 
-.spatial-capsule {
-  background: var(--glass-bg-capsule);
-  backdrop-filter: var(--spatial-blur);
-  -webkit-backdrop-filter: var(--spatial-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-capsule);
-  box-shadow: var(--spatial-shadow-capsule);
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+.editorial-kicker-dark {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a3e8b8;
 }
 
-.spatial-capsule:hover {
-  background: var(--glass-bg-hover);
-  border-color: var(--glass-border-highlight);
-  transform: scale(1.02);
+/* Natural Lines & Separators */
+.editorial-rule {
+  height: 1px;
+  background-color: var(--border-light);
+  width: 100%;
+  border: none;
 }
 
-/* Interactive Apple Gaze / Scale Hover */
-.gaze-target {
-  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+.editorial-rule-dark {
+  height: 1px;
+  background-color: var(--bg-dark-border);
+  width: 100%;
+  border: none;
 }
 
-.gaze-target:hover {
-  transform: scale(1.025);
-  box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.25);
-}
-
-/* Status Indicators with VisionOS Luminous Glow */
-.status-beacon {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  position: relative;
-}
-
-.status-beacon.emerald {
-  background-color: var(--color-emerald-glow);
-  box-shadow: 0 0 12px var(--color-emerald-glow);
-}
-
-.status-beacon.emerald::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-emerald-glow);
-  animation: apple-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.status-beacon.amber {
-  background-color: var(--color-amber);
-  box-shadow: 0 0 12px var(--color-amber);
-}
-
-.status-beacon.rose {
-  background-color: var(--color-rose);
-  box-shadow: 0 0 12px var(--color-rose);
-}
-
-@keyframes apple-pulse {
-  0% { transform: scale(0.85); opacity: 0.9; }
-  70%, 100% { transform: scale(2.4); opacity: 0; }
-}
-
-/* Leaflet Container in Immersive Spatial Mode */
+/* Leaflet Container */
 .leaflet-container {
-  background: #03070d !important;
+  background: #07100b !important;
   font-family: var(--font-sans) !important;
   outline: none;
 }
@@ -181,66 +160,10 @@ html, body, #root {
   display: none !important;
 }
 
-/* Apple Spatial Node Marker */
-.spatial-marker-node {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.spatial-marker-ring {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-emerald-glow);
-  background: rgba(16, 185, 129, 0.2);
-  animation: spatial-sonar 3.2s infinite ease-out;
-}
-
-.spatial-marker-core {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid var(--color-emerald-glow);
-  box-shadow: 0 0 14px var(--color-emerald-glow);
-  z-index: 2;
-  transition: transform 0.2s ease;
-}
-
-.spatial-marker-node:hover .spatial-marker-core {
-  transform: scale(1.3);
-}
-
-.spatial-marker-label {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(10, 16, 28, 0.85);
-  border: 1px solid var(--glass-border-highlight);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 9px;
-  border-radius: var(--radius-capsule);
-  white-space: nowrap;
-  pointer-events: none;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255,255,255,0.2);
-}
-
-@keyframes spatial-sonar {
-  0% { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(2.5); opacity: 0; }
-}
-
-/* Custom Scrollbar for VisionOS Glass Panels */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -248,12 +171,12 @@ html, body, #root {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius-capsule);
+  background: #c8d6cb;
+  border-radius: var(--radius-xs);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.32);
+  background: var(--color-sage);
 }
 
 button {
@@ -262,9 +185,118 @@ button {
   border: none;
   outline: none;
   background: transparent;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s ease;
 }
 
-button:active {
-  transform: scale(0.96);
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Buttons */
+.btn-editorial-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background-color: var(--color-forest);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--color-forest);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-primary:hover {
+  background-color: var(--color-forest-hover);
+  border-color: var(--color-forest-hover);
+  transform: translateY(-1px);
+}
+
+.btn-editorial-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background-color: var(--color-sage-bg);
+  color: var(--color-forest);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--color-sage-border);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-secondary:hover {
+  background-color: var(--color-sage-pale);
+  border-color: var(--color-forest-bright);
+}
+
+.btn-editorial-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-outline:hover {
+  background-color: var(--bg-canvas-subtle);
+  border-color: var(--border-strong);
+  color: var(--color-forest);
+}
+
+.btn-editorial-dark-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-dark-outline:hover {
+  background-color: var(--bg-canvas-subtle);
+  border-color: var(--border-strong);
+}
+
+.btn-editorial-dark-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background-color: var(--color-forest);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--color-forest);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-dark-solid:hover {
+  background-color: var(--color-forest-hover);
+  transform: translateY(-1px);
 }

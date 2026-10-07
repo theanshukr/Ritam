@@ -10,6 +10,7 @@ ENV/
 env.bak/
 venv.bak/
 backend/venv/
+**/.venv/
 .pytest_cache/
 .coverage
 htmlcov/
@@ -18,6 +19,7 @@ htmlcov/
 
 # Node.js / Frontend
 node_modules/
+**/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -59,3 +61,7 @@ Thumbs.db
 .gemini/
 *.log
 scratch/
+
+# Large Binaries
+*.zip
+*.exe

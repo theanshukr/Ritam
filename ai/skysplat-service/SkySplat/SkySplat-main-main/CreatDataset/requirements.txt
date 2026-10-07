@@ -1,0 +1,11 @@
+numpy
+opencv-python
+imageio
+srtm4
+scipy
+pymap3d
+utm
+pyproj
+trimesh
+pyquaternion
+GDAL

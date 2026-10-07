@@ -1,0 +1,3 @@
+feature:
+  weight_sam: 1.0
+  weight_clip: 1.0

@@ -1,0 +1,27 @@
+[project]
+name = "creatdataset"
+version = "0.1.0"
+description = "Create cropped multi-view satellite datasets with RPC-derived cameras."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "imageio",
+    "srtm4",
+    "scipy",
+    "pymap3d",
+    "utm",
+    "pyproj",
+    "trimesh",
+    "pyquaternion",
+]
+
+[tool.setuptools]
+py-modules = [
+    "satellite_sfm_crop2048to256",
+    "RPC_170",
+]
+
+[tool.setuptools.packages.find]
+include = ["preprocess*", "preprocess_sfm*"]
